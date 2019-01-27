@@ -49,6 +49,7 @@ func Run() error {
 			server.NewUserServiceServer(store),
 			server.NewOAuthServiceServer(cli, store),
 		),
+		grapiserver.WithGrpcAddr("tcp", ":4000"),
 	)
 	return s.Serve()
 }
